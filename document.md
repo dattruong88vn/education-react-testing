@@ -16,3 +16,9 @@
         - Là một option của jest để giúp theo dõi các file được thay đổi so với lần commit gần nhất. Từ đó chỉ thực thi test trên những file đã thay đổi này
         - Không chạy test trên những file đã được commit trước đó
         - Giúp tối ưu quá trình test bất kể bạn có bao nhiêu test được viết.
+
+    5. Filter test
+        - Sử dụng các phím tắt cơ bản trong terminal
+        - Sử dụng các function
+            test.only() --> chỉ thực hiện những test này khi chạy test file
+            test.skip() --> bỏ qua test này khi chạy test file
