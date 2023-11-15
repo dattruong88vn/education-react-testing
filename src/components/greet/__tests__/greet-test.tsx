@@ -4,7 +4,7 @@
  */
 
 import { render, screen } from "@testing-library/react";
-import { Greet } from "./Greet";
+import { Greet } from "../Greet";
 
 describe("Greet", () => {
   test("Render normal", () => {
@@ -13,7 +13,7 @@ describe("Greet", () => {
     expect(textElement).toBeInTheDocument();
   });
 
-  test("Render with name prop", () => {
+  test("Render with a name prop", () => {
     render(<Greet name="Thanh Dat" />);
     const textElement = screen.getByText(/thanh dat/i);
     expect(textElement).toBeInTheDocument();

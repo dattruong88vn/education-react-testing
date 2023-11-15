@@ -35,3 +35,13 @@
             + fn: chứa các function test
         - Có thể sử dụng các fn filter như: describe.only() hay describe.skip()
         - Có thể nested các function describe
+
+    8. Quy ước đặt tên file test:
+        - File có chứa phần mở rộng: ['.test.jsx', '.test.tsx']
+        - File có chứa phần mở rộng: ['.spec.jsx', '.spec.tsx']
+        - File có chứa phần mở rộng: ['.js', '.ts', '.jsx', '.tsx'] và nằm trong folder "__tests__"
+
+    9. Global function
+        it() === test()
+        fit() === test.only()
+        xit() === test.skip()
