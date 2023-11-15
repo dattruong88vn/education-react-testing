@@ -17,8 +17,21 @@
         - Không chạy test trên những file đã được commit trước đó
         - Giúp tối ưu quá trình test bất kể bạn có bao nhiêu test được viết.
 
-    5. Filter test
+    5. Test
+        - Sử dụng global function test(name, fn, timeout)
+            + name: tên của test
+            + fn: chứa thông tin mong đợi, nếu ko đúng trả về failed, đúng trả về passed
+            + timeout: optional, thời gian để quit test, mặc định 5s
+
+    6. Filter test
         - Sử dụng các phím tắt cơ bản trong terminal
         - Sử dụng các function
             test.only() --> chỉ thực hiện những test này khi chạy test file
             test.skip() --> bỏ qua test này khi chạy test file
+
+    7. Group test
+        - Sử dụng global function describe(name, fn);
+            + name: tên group
+            + fn: chứa các function test
+        - Có thể sử dụng các fn filter như: describe.only() hay describe.skip()
+        - Có thể nested các function describe

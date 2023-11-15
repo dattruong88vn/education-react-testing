@@ -6,14 +6,16 @@
 import { render, screen } from "@testing-library/react";
 import { Greet } from "./Greet";
 
-test("Greet Render", () => {
-  render(<Greet />);
-  const textElement = screen.getByText(/hello/i);
-  expect(textElement).toBeInTheDocument();
-});
+describe("Greet", () => {
+  test("Render normal", () => {
+    render(<Greet />);
+    const textElement = screen.getByText(/hello/i);
+    expect(textElement).toBeInTheDocument();
+  });
 
-test("Greet render with a name prop", () => {
-  render(<Greet name="Thanh Dat" />);
-  const textElement = screen.getByText(/thanh dat/i);
-  expect(textElement).toBeInTheDocument();
+  test("Render with a name prop", () => {
+    render(<Greet name="Thanh Dat" />);
+    const textElement = screen.getByText(/thanh dat/i);
+    expect(textElement).toBeInTheDocument();
+  });
 });
