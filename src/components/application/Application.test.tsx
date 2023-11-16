@@ -26,6 +26,17 @@ describe("Application", () => {
     });
     expect(paragraphEle).toBeInTheDocument();
 
+    const paragraphEle2 = screen.getByText("All fields", { exact: false });
+    expect(paragraphEle2).toBeInTheDocument();
+
+    const paragraphEle3 = screen.getByText(/all fields/i, { exact: false });
+    expect(paragraphEle3).toBeInTheDocument();
+
+    const paragraphEle4 = screen.getByText((content) =>
+      content.startsWith("All fields")
+    );
+    expect(paragraphEle4).toBeInTheDocument();
+
     // span
     const closeEle = screen.getByTitle("close");
     expect(closeEle).toBeInTheDocument();

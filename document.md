@@ -95,3 +95,19 @@ C. React Testing Library
    * getByTestId
 
    4. RTL Queries Multi Element
+
+      - getAllByRole
+
+   5. TextMatch
+
+      - TextMatch là tham số đầu tiên của tất cả các method query
+
+        - Ví dụ: <div>Hello World</div>
+        - screen.getByText("Hello World") --> Hello World chính là TextMatch
+
+      - TextMatch có thể là
+        - String --> screen.getByText("Hello World");
+        - RegEx --> screen.getByText(/hello world/i);
+        - Function
+          - Cấu trúc: (content?: string, element: Element | null) => boolean
+          - Ví dụ: screen.getByText(content => content.startsWith('Hello'))
