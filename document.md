@@ -37,11 +37,15 @@
         - Có thể nested các function describe
 
     8. Quy ước đặt tên file test:
-        - File có chứa phần mở rộng: ['.test.jsx', '.test.tsx']
-        - File có chứa phần mở rộng: ['.spec.jsx', '.spec.tsx']
+        - File có chứa phần mở rộng: ['.test.js', '.test.ts', '.test.jsx', '.test.tsx']
+        - File có chứa phần mở rộng: ['.spec.js', '.spec.ts', '.spec.jsx', '.spec.tsx']
         - File có chứa phần mở rộng: ['.js', '.ts', '.jsx', '.tsx'] và nằm trong folder "__tests__"
 
     9. Global function
         it() === test()
         fit() === test.only()
         xit() === test.skip()
+
+    10. Test Coverage
+        - Dùng để thống kê danh sách test, file test, branch test, line test trong source code.
+        - Sử dụng script: "test --coverage" để thực thi
