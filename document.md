@@ -97,3 +97,4 @@ C. React Testing Library
    * getByDisplayText
    * getByAltText
    * getByTitle
+   * getByTestId
