@@ -4,6 +4,8 @@ import { Application } from "./Application";
 describe("Application", () => {
   test("render correctly", () => {
     render(<Application />);
+
+    // h1
     const pageHeading = screen.getByRole("heading", {
       //   name: "Job application form",
       level: 1,
@@ -11,17 +13,20 @@ describe("Application", () => {
 
     expect(pageHeading).toBeInTheDocument();
 
+    // h2
     const sectionHeading = screen.getByRole("heading", {
       //   name: "Section 1",
       level: 2,
     });
     expect(sectionHeading).toBeInTheDocument();
 
+    // p
     const paragraphEle = screen.getByText("All fields are mandatory", {
       selector: "p",
     });
     expect(paragraphEle).toBeInTheDocument();
 
+    // input name
     const nameEle = screen.getByRole("textbox", {
       name: "Name",
     });
@@ -35,14 +40,20 @@ describe("Application", () => {
     const nameEle3 = screen.getByPlaceholderText("Fullname");
     expect(nameEle3).toBeInTheDocument();
 
+    const nameEle4 = screen.getByDisplayValue("Thanh Dat");
+    expect(nameEle4).toBeInTheDocument();
+
+    // text area bio
     const bioEle = screen.getByRole("textbox", {
       name: "Bio",
     });
     expect(bioEle).toBeInTheDocument();
 
+    // dropdown job location
     const jobLocationEle = screen.getByRole("combobox");
     expect(jobLocationEle).toBeInTheDocument();
 
+    // checkbox
     const termEle = screen.getByRole("checkbox");
     expect(termEle).toBeInTheDocument();
 
@@ -51,6 +62,7 @@ describe("Application", () => {
     );
     expect(termEle2).toBeInTheDocument();
 
+    // button submit
     const submitBtnEle = screen.getByRole("button");
     expect(submitBtnEle).toBeInTheDocument();
   });
