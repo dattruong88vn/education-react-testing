@@ -68,18 +68,13 @@ C. React Testing Library
    - Third-party code
    - Code không thực sự quan trọng khi đứng ở góc nhìn của người dùng (Ví dụ một util function để format lại định dạng ngày tháng trước khi hiển thị ra UI)
 
-3. RTL Queries
+3. RTL Queries Single Element
 
    - Mỗi test đều tuân theo các bước cơ bản như sau:
      - Render component (dùng fn render của RTL)
      - Tìm một element được render trong component
      - Khẳng định lại element được tìm thấy passed hay failed test (sử dụng funciton expect kết hợp với một matcher function (từ jest hoặc jest-dom))
    - Queries là những methods được cung cấp bởi RT để tìm các element trong page
-
-     - Tìm 1 element: getBy.., queryBy.., findBy..
-     - Tìm nhiều element: getAllBy.., queryAllBy.., findAllBy..
-     - Dấu .. là phần bổ nghĩa cho method: Role, LabelText, Text, Title, TestId....
-
    - Khi query tìm 1 element mà kết quả ko tìm thấy hoặc tìm thấy nhiều element thì sẽ báo failed
 
    * getByRole: tìm element theo role (ƯU TIÊN dùng)
@@ -98,3 +93,5 @@ C. React Testing Library
    * getByAltText
    * getByTitle
    * getByTestId
+
+   4. RTL Queries Multi Element
