@@ -26,6 +26,10 @@ describe("Application", () => {
     });
     expect(paragraphEle).toBeInTheDocument();
 
+    // img
+    const imageEle = screen.getByAltText("a person with a laptop");
+    expect(imageEle).toBeInTheDocument();
+
     // input name
     const nameEle = screen.getByRole("textbox", {
       name: "Name",

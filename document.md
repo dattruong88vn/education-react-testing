@@ -83,9 +83,16 @@ C. React Testing Library
    - Khi query tìm 1 element mà kết quả ko tìm thấy hoặc tìm thấy nhiều element thì sẽ báo failed
 
    * getByRole: tìm element theo role (ƯU TIÊN dùng)
+
      - Khi nhiều element có cùng role, thì có thêm các thuộc tính name, level (chỉ dụng cho heading) cho object config trong method getByRole
      - Giá trị của thuộc tính name có thể là:
        - Label của một form element (thường thẻ input có 1 thẻ label đi cùng + thuộc tính htmlFor)
        - Text content của element
        - Giá trị của thuộc tính aria-label của element đó
      - Giá trị của thuộc tính level là từ 1 đến 6
+
+   * getByLabelText
+   * getByPlaceholderText
+   * getByText
+   * getByDisplayText
+   * getByAltText
