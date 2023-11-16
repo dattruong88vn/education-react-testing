@@ -26,6 +26,10 @@ describe("Application", () => {
     });
     expect(paragraphEle).toBeInTheDocument();
 
+    // span
+    const closeEle = screen.getByTitle("close");
+    expect(closeEle).toBeInTheDocument();
+
     // img
     const imageEle = screen.getByAltText("a person with a laptop");
     expect(imageEle).toBeInTheDocument();
