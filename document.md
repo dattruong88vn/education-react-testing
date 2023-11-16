@@ -111,3 +111,23 @@ C. React Testing Library
         - Function
           - Cấu trúc: (content?: string, element: Element | null) => boolean
           - Ví dụ: screen.getByText(content => content.startsWith('Hello'))
+
+   6. Query Element không tồn tại trên DOM
+
+      - Khi sử dụng getBy và getAllBy nếu Element không tồn tại trên DOM thì sẽ bị báo lỗi. Do vậy muốn test một hoặc nhiều element không tồn tại trên DOM sẽ bị báo lỗi.
+
+      - Sử dụng queryBy.. và queryAllBy..
+      - queryBy..:
+        - Tìm thấy trả về element
+        - Không tìm thấy trả về null
+        - Tìm thấy nhiều element báo lỗi
+      - queryAllBy..:
+        - Trả về array các element
+        - Nếu không tìm thấy trả về array rỗng []
+
+   7. findBy và findAllBy
+      - Trả về 1 promise
+        - Resolse khi tìm thấy 1 element (findBy) hoặc nhiều element (findAllBy) match với query
+        - Reject khi không tìm thấy element trong thời gian timeout (mặc định là 1000ms)
+      - Config thời gian time out trong tham số thứ 3 (BA) của findBy hoặc findAllBy
+      - Sử dụng để test element sẽ xuất hiện hoặc mất đi sau khi có user action, timeout hoặc promise
