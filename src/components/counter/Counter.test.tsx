@@ -12,11 +12,11 @@ describe("Counter", () => {
     const incrementButton = screen.getByRole("button", { name: "Increment" });
     expect(incrementButton).toBeInTheDocument();
 
-    // const amountInput = screen.getByRole("spinbutton");
-    // expect(amountInput).toBeInTheDocument();
+    const amountInput = screen.getByRole("spinbutton");
+    expect(amountInput).toBeInTheDocument();
 
-    // const setButton = screen.getByRole("button", { name: "Set" });
-    // expect(setButton).toBeInTheDocument();
+    const setButton = screen.getByRole("button", { name: "Set" });
+    expect(setButton).toBeInTheDocument();
   });
 
   test("renders a count of 0", () => {
@@ -41,5 +41,37 @@ describe("Counter", () => {
     await user.dblClick(buttonElement);
     const countElement = screen.getByRole("heading", { level: 1 });
     expect(countElement).toHaveTextContent("2");
+  });
+
+  test("renders a count of 10 after clicking set button", async () => {
+    user.setup();
+    render(<Counter />);
+
+    const amountInputElement = screen.getByRole("spinbutton");
+    await user.type(amountInputElement, "10");
+    expect(amountInputElement).toHaveValue(10);
+
+    const setButtonElement = screen.getByRole("button", { name: "Set" });
+    await user.click(setButtonElement);
+    const countElement = screen.getByRole("heading", { level: 1 });
+    expect(countElement).toHaveTextContent("10");
+  });
+
+  test("element are focused on right order", async () => {
+    user.setup();
+    render(<Counter />);
+
+    const incrementButtonElement = screen.getByRole("button", {
+      name: /increment/i,
+    });
+    const amountInputElement = screen.getByRole("spinbutton");
+    const setButtonElement = screen.getByRole("button", { name: "Set" });
+
+    await user.tab();
+    expect(incrementButtonElement).toHaveFocus();
+    await user.tab();
+    expect(amountInputElement).toHaveFocus();
+    await user.tab();
+    expect(setButtonElement).toHaveFocus();
   });
 });

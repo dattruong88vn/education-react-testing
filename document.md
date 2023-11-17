@@ -139,9 +139,10 @@ C. React Testing Library
 
    - user.setup() : bắt buộc để khởi tạo
 
-   - Mouse Methods:
-     - user.click()
-     - user.dblclick()
-     - user.tripleclick()
-     - user.hover()
-     - user.unhover()
+   - Mouse Convenience APIs: click(), dblclick(), tripleclick(), hover(), unhover()
+
+   - Keyboard Methods:
+     - Unility APIs: type(), clear(), selectOptions(), deselectOptions(), upload()
+     - Convenience APIs: tab(),
+     - Clipboard APIs: copy(), cut(), paste()
+     - Keyboard APIs:
