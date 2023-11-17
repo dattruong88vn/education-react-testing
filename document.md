@@ -126,8 +126,22 @@ C. React Testing Library
         - Nếu không tìm thấy trả về array rỗng []
 
    7. findBy và findAllBy
+
       - Trả về 1 promise
         - Resolse khi tìm thấy 1 element (findBy) hoặc nhiều element (findAllBy) match với query
         - Reject khi không tìm thấy element trong thời gian timeout (mặc định là 1000ms)
       - Config thời gian time out trong tham số thứ 3 (BA) của findBy hoặc findAllBy
       - Sử dụng để test element sẽ xuất hiện hoặc mất đi sau khi có user action, timeout hoặc promise
+
+   8. Extension: Testing Background
+
+   D. USER INTERACTIONS - user-events
+
+   - user.setup() : bắt buộc để khởi tạo
+
+   - Mouse Methods:
+     - user.click()
+     - user.dblclick()
+     - user.tripleclick()
+     - user.hover()
+     - user.unhover()
