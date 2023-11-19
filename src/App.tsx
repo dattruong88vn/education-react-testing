@@ -1,15 +1,20 @@
 import "./App.css";
-import { Application } from "./components/application/Application";
-import { Counter } from "./components/counter/Counter";
-import { Skills } from "./components/skills/Skills";
+// import { Application } from "./components/application/Application";
+// import { Counter } from "./components/counter/Counter";
+// import { Skills } from "./components/skills/Skills";
+import { AppProviders } from "./providers/app-providers";
+import { MuiMode } from "./components/mui/MuiMode";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Application /> */}
-      {/* <Skills skills={["HTML", "CSS"]} /> */}
-      <Counter />
-    </div>
+    <AppProviders>
+      <div className="App">
+        {/* <Application /> */}
+        {/* <Skills skills={["HTML", "CSS"]} /> */}
+        {/* <Counter /> */}
+        <MuiMode />
+      </div>
+    </AppProviders>
   );
 }
 
