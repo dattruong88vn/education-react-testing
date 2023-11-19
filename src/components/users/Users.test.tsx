@@ -14,4 +14,10 @@ describe("Users", () => {
     const users = await screen.findAllByRole("listitem");
     expect(users).toHaveLength(MOCK_DATA_USERS.length);
   });
+
+  test("renders error", async () => {
+    render(<Users />);
+    const error = await screen.findByText("Error fetching users");
+    expect(error).toBeInTheDocument();
+  });
 });
